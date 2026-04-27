@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // ── Permite chamadas do seu site (troque pela URL real depois de hospedar) ──
 app.use(cors({
-  origin: ['http://localhost:5500', 'https://SEU-SITE.netlify.app', '*']
+  origin: '*'
 }));
 app.use(express.json());
 
