@@ -286,7 +286,7 @@ async function enviarIngressos(comprador, itens) {
   ).join('');
 
   await resend.emails.send({
-    from: 'Cê Tá Doido Chapecó <onboarding@resend.dev>',
+    from: 'Cê Tá Doido Chapecó <noreply@proshowoficial.com>',
     to: comprador.email,
     subject: `🎟️ Seus ingressos — Cê Tá Doido Chapecó 08/08/2026`,
     html: `
