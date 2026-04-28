@@ -190,6 +190,20 @@ app.post('/api/webhook', async (req, res) => {
   }
 });
 
+// ── ROTA: teste de email ──────────────────────────────────────────────────────
+app.post('/api/test-email', async (req, res) => {
+  try {
+    const comprador = { nome: 'Kaique Antoniolli', cpf: '000.000.000-00', email: 'kaiqueantoniolli@gmail.com' };
+    const itens = [
+      { nome: 'CE TA DOIDO OPEN BAR - INTEIRA', qty: 1 },
+      { nome: 'AREA VIP - MEIA', qty: 1 }
+    ];
+    await enviarIngressos(comprador, itens);
+    res.json({ ok: true, mensagem: 'Email enviado!' });
+  } catch (err) {
+    res.status(500).json({ erro: err.message, stack: err.stack });
+  }
+});
 // ── ROTA: saúde ──────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => res.json({ ok: true }));
 
